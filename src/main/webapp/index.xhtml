@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Plantilla Básica JSF</title>
+</h:head>
+<h:body>
+	<h2>
+		<h:outputText value="Lista Clientes"></h:outputText>
+	</h2>
+	
+	<h:dataTable value="#{clienteBean.obtenerClientes()}" var="cliente" border="3">
+		<h:column>
+			<f:facet name="header">id</f:facet>
+			<h:outputText value="#{cliente.id_cliente}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">Nombre</f:facet>
+			<h:outputText value="#{cliente.nombre}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">Apellidos</f:facet>
+			<h:outputText value="#{cliente.apellido}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">Direccion</f:facet>
+			<h:outputText value="#{cliente.direccion}"></h:outputText>
+		</h:column>
+	</h:dataTable>
+</h:body>
+</html>
